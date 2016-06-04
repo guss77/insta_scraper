@@ -1,4 +1,4 @@
-require "insta_scraper/version"
+require 'insta_scraper/version'
 
 require 'open-uri'
 require 'json'
