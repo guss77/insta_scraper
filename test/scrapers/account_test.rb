@@ -2,7 +2,9 @@ require 'test_helper'
 
 class AccountTest < Minitest::Test
   def setup
-    @html = File.expand_path("../samples/account.html", __FILE__)
+    html_file_path = File.expand_path("../../samples/account.html", __FILE__)
+    @html = File.read(html_file_path)
+
     @account = InstaScraper::Account.new('barna.kovacs.codes', @html)
   end
 
