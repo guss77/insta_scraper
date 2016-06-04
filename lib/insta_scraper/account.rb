@@ -36,6 +36,5 @@ module InstaScraper
     def shared_data_end
       line_with_data =~ /\};</
     end
-
   end
 end
