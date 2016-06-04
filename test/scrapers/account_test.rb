@@ -28,4 +28,8 @@ class AccountTest < Minitest::Test
   def test_it_parses_sharedData_raw_json
     assert @account.json == @json
   end
+
+  def test_json_is_a_hashie_mash
+    assert @account.json.is_a? Hashie::Mash
+  end
 end
