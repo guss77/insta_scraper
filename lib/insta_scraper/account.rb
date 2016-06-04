@@ -16,7 +16,7 @@ module InstaScraper
     end
 
     def json
-      JSON.parse(shared_data)
+      @json ||= JSON.parse(shared_data)
     end
 
     private
