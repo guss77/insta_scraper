@@ -11,4 +11,8 @@ class AccountTest < Minitest::Test
       InstaScraper::Account.new
     end
   end
+
+  def test_account_url
+    assert @account.url == 'https://www.instagram.com/barna.kovacs.codes/'
+  end
 end
