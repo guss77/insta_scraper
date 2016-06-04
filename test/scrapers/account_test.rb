@@ -18,7 +18,7 @@ class AccountTest < Minitest::Test
     assert @account.url == 'https://www.instagram.com/barna.kovacs.codes/'
   end
 
-  def test_it_returns_html
+  def test_it_returns_the_init_html
     assert @account.html == @html
   end
 end
