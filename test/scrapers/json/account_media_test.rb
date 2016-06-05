@@ -10,7 +10,7 @@ class InstaScraper::JSON::AccountMediaTest < Minitest::Test
 
   def test_it_raises_when_no_arguments
     assert_raises ArgumentError do
-      InstaScraper::HTML::Media.new
+      InstaScraper::JSON::AccountMedia.new
     end
   end
 
