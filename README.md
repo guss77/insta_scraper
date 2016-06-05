@@ -28,8 +28,8 @@ Subclasses of InstaScraper::JSON are scraping json endpoints.
 ```ruby
 account = InstaScraper::HTML::Account.new('barna.kovacs.codes')
 
-account.json #=> #<Hashie::Mash...
-account.json.deep_find('followed_by').fetch('count') #=> 4
+account.data #=> #<Hashie::Mash...
+account.data.deep_find('followed_by').fetch('count') #=> 4
 ```
 
 * InstaScraper::HTML::Media
@@ -37,8 +37,8 @@ account.json.deep_find('followed_by').fetch('count') #=> 4
 ```ruby
 media = InstaScraper::HTML::Media.new('BGFVAPPIaBQ')
 
-media.json #=> #<Hashie::Mash...
-media.json.deep_find('comments').fetch('count') #=> 1892
+media.data #=> #<Hashie::Mash...
+media.data.deep_find('comments').fetch('count') #=> 1892
 ```
 
 * InstaScraper::JSON::AccountMedia
@@ -46,8 +46,8 @@ media.json.deep_find('comments').fetch('count') #=> 1892
 ```ruby
 account_media = InstaScraper::JSON::AccountMedia.new('barna.kovacs.codes')
 
-account_media.json #=> #<Hashie::Mash...
-account_media.json.fetch('items') #=> [...]
+account_media.data #=> #<Hashie::Mash...
+account_media.data.fetch('items') #=> [...]
 ```
 
 ## Development

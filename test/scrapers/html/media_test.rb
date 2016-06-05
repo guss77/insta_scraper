@@ -26,10 +26,10 @@ class InstaScraper::HTML::MediaTest < Minitest::Test
   end
 
   def test_it_parses_sharedData_raw_json
-    assert @media.json == @json
+    assert @media.data == @json
   end
 
   def test_json_is_a_hashie_mash
-    assert @media.json.is_a? Hashie::Mash
+    assert @media.data.is_a? Hashie::Mash
   end
 end

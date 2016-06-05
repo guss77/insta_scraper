@@ -26,10 +26,10 @@ class InstaScraper::HTML::AccountTest < Minitest::Test
   end
 
   def test_it_parses_sharedData_raw_json
-    assert @account.json == @json
+    assert @account.data == @json
   end
 
   def test_json_is_a_hashie_mash
-    assert @account.json.is_a? Hashie::Mash
+    assert @account.data.is_a? Hashie::Mash
   end
 end

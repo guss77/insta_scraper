@@ -19,6 +19,6 @@ class InstaScraper::JSON::AccountMediaTest < Minitest::Test
   end
 
   def test_json_is_a_hashie_mash
-    assert @media.json.is_a? Hashie::Mash
+    assert @media.data.is_a? Hashie::Mash
   end
 end

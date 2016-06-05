@@ -10,8 +10,8 @@ module InstaScraper
       "https://www.instagram.com/#{username}/media/"
     end
 
-    def json
-      @json ||=
+    def data
+      @data ||=
         Hashie::Mash.new(::JSON.parse(raw_json))
                     .extend(Hashie::Extensions::DeepFetch)
                     .extend(Hashie::Extensions::DeepFind)
