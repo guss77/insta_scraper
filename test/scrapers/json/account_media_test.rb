@@ -5,7 +5,7 @@ class InstaScraper::JSON::AccountMediaTest < Minitest::Test
     @account_media = InstaScraper::JSON::AccountMedia.new('barna.kovacs.codes')
 
     json_file_path = File.expand_path('../samples/account_media.json', __FILE__)
-    @json = JSON.parse(File.read(json_file_path))
+    @json = File.read(json_file_path)
   end
 
   def test_it_raises_when_no_arguments
@@ -18,11 +18,8 @@ class InstaScraper::JSON::AccountMediaTest < Minitest::Test
     assert @account_media.url == 'https://www.instagram.com/barna.kovacs.codes/media/'
   end
 
-  def test_it_parses_json
-    assert @account_media.data == @json
-  end
-
   def test_json_is_a_hashie_mash
+    @account_media.instance_variable_set('@raw_json', @json)
     assert @account_media.data.is_a? Hashie::Mash
   end
 end
