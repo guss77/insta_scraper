@@ -7,6 +7,3 @@ require 'hashie'
 
 require 'insta_scraper/html'
 require 'insta_scraper/html/account'
-
-module InstaScraper
-end
