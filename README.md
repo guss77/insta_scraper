@@ -41,6 +41,24 @@ media.data #=> #<Hashie::Mash...
 media.data.deep_find('comments').fetch('count') #=> 1892
 ```
 
+* InstaScraper::JSON::Account
+
+```ruby
+account = InstaScraper::JSON::Account.new('barna.kovacs.codes')
+
+account.data #=> #<Hashie::Mash...
+account.data.deep_find('followed_by').fetch('count') #=> 4
+```
+
+* InstaScraper::JSON::Media
+
+```ruby
+media = InstaScraper::JSON::Media.new('BGFVAPPIaBQ')
+
+media.data #=> #<Hashie::Mash...
+media.data.deep_find('comments').fetch('count') #=> 1892
+```
+
 * InstaScraper::JSON::AccountMedia
 
 ```ruby
