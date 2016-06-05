@@ -1,6 +1,6 @@
 # InstaScraper
 
-Scrapes Instagram accounts
+Scrapes Instagram
 
 ## Installation
 
@@ -20,9 +20,34 @@ Or install it yourself as:
 
 ## Usage
 
+Subclasses of InstaScraper::HTML are scraping html endpoints.
+Subclasses of InstaScraper::JSON are scraping json endpoints.
+
+* InstaScraper::HTML::Account
+
 ```ruby
-account = InstaScraper::Account.new('barna.kovacs.codes')
-account.raw
+account = InstaScraper::HTML::Account.new('barna.kovacs.codes')
+
+account.json #=> #<Hashie::Mash...
+account.json.deep_find('followed_by').fetch('count') #=> 4
+```
+
+* InstaScraper::HTML::Media
+
+```ruby
+media = InstaScraper::HTML::Media.new('BGFVAPPIaBQ')
+
+media.json #=> #<Hashie::Mash...
+media.json.deep_find('comments').fetch('count') #=> 1892
+```
+
+* InstaScraper::JSON::AccountMedia
+
+```ruby
+account_media = InstaScraper::JSON::AccountMedia.new('barna.kovacs.codes')
+
+account_media.json #=> #<Hashie::Mash...
+account_media.json.fetch('items') #=> [...]
 ```
 
 ## Development
