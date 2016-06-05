@@ -1,11 +1,11 @@
 require 'test_helper'
 
-class HTML::AccountTest < Minitest::Test
+class InstaScraper::HTML::AccountTest < Minitest::Test
   def setup
     html_file_path = File.expand_path('../samples/account.html', __FILE__)
     @html = File.read(html_file_path)
 
-    @account = InstaScraper::Account.new('barna.kovacs.codes', @html)
+    @account = InstaScraper::HTML::Account.new('barna.kovacs.codes', @html)
 
     json_file_path = File.expand_path('../samples/account.json', __FILE__)
     @json = JSON.parse(File.read(json_file_path))
@@ -13,7 +13,7 @@ class HTML::AccountTest < Minitest::Test
 
   def test_it_raises_when_no_arguments
     assert_raises ArgumentError do
-      InstaScraper::Account.new
+      InstaScraper::HTML::Account.new
     end
   end
 

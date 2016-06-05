@@ -1,11 +1,13 @@
-module HTML
-  def html
-    @html ||= get_html
-  end
+module InstaScraper
+  class HTML
+    def html
+      @html ||= get_html
+    end
 
-  private
+    private
 
-  def get_html
-    open(url).read
+    def get_html
+      open(url).read
+    end
   end
 end

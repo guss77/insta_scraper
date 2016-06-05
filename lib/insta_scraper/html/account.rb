@@ -1,7 +1,5 @@
 module InstaScraper
-  class Account
-    include HTML
-
+  class HTML::Account < InstaScraper::HTML
     attr_reader :username
 
     def initialize(username = nil, html = nil)
