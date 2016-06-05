@@ -15,7 +15,7 @@ module InstaScraper
 
     def json
       @json ||=
-        Hashie::Mash.new(JSON.parse(shared_data))
+        Hashie::Mash.new(::JSON.parse(shared_data))
                     .extend(Hashie::Extensions::DeepFetch)
                     .extend(Hashie::Extensions::DeepFind)
     end
