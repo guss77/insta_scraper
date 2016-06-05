@@ -1,4 +1,4 @@
-module HTMLScraper
+module HTML
   def html
     @html ||= get_html
   end

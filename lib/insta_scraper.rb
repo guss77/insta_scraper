@@ -5,8 +5,8 @@ require 'json'
 
 require 'hashie'
 
-require 'insta_scraper/html_scraper'
-require 'insta_scraper/account'
+require 'insta_scraper/html'
+require 'insta_scraper/html/account'
 
 module InstaScraper
 end

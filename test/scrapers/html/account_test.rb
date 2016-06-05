@@ -1,13 +1,13 @@
 require 'test_helper'
 
-class AccountTest < Minitest::Test
+class HTML::AccountTest < Minitest::Test
   def setup
-    html_file_path = File.expand_path('../../samples/account.html', __FILE__)
+    html_file_path = File.expand_path('../samples/account.html', __FILE__)
     @html = File.read(html_file_path)
 
     @account = InstaScraper::Account.new('barna.kovacs.codes', @html)
 
-    json_file_path = File.expand_path('../../samples/account.json', __FILE__)
+    json_file_path = File.expand_path('../samples/account.json', __FILE__)
     @json = JSON.parse(File.read(json_file_path))
   end
 

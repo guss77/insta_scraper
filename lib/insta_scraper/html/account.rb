@@ -1,6 +1,6 @@
 module InstaScraper
   class Account
-    include HTMLScraper
+    include HTML
 
     attr_reader :username
 
