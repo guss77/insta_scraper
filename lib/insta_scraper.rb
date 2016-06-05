@@ -11,4 +11,5 @@ require 'insta_scraper/html/media'
 
 require 'insta_scraper/json'
 require 'insta_scraper/json/account'
+require 'insta_scraper/json/media'
 require 'insta_scraper/json/account_media'
