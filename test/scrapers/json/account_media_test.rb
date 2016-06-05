@@ -18,6 +18,10 @@ class InstaScraper::JSON::AccountMediaTest < Minitest::Test
     assert @media.url == 'https://www.instagram.com/barna.kovacs.codes/media/'
   end
 
+  def test_it_parses_json
+    assert @media.data == @json
+  end
+
   def test_json_is_a_hashie_mash
     assert @media.data.is_a? Hashie::Mash
   end
