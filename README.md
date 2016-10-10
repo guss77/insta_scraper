@@ -63,6 +63,8 @@ media.data.deep_find('comments').fetch('count') #=> 1892
 
 ```ruby
 account_media = InstaScraper::JSON::AccountMedia.new('barna.kovacs.codes')
+# or with params (ex. max_id for offset)
+# account_media = InstaScraper::JSON::AccountMedia.new('barna.kovacs.codes', max_id: '1261002980537663713_3072962559')
 
 account_media.data #=> #<Hashie::Mash...
 account_media.data.fetch('items') #=> [...]
