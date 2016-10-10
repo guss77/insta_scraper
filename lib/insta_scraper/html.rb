@@ -10,8 +10,6 @@ module InstaScraper
       open(url).read
     end
 
-    private
-
     def line_with_data
       html.each_line.detect { |l| l[/sharedData/] }
     end
