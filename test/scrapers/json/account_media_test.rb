@@ -22,4 +22,10 @@ class InstaScraper::JSON::AccountMediaTest < Minitest::Test
     @account_media.instance_variable_set('@raw_json', @json)
     assert @account_media.data.is_a? Hashie::Mash
   end
+
+  def test_it_serializes_max_id_param
+    @account_media = InstaScraper::JSON::AccountMedia.new('barna.kovacs.codes', max_id: '1329031062285749945_528817151')
+
+    assert @account_media.url == 'https://www.instagram.com/barna.kovacs.codes/media/?max_id=1329031062285749945_528817151'
+  end
 end
