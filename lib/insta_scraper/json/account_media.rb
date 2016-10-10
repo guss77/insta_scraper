@@ -18,13 +18,5 @@ module InstaScraper
                     .extend(Hashie::Extensions::DeepFetch)
                     .extend(Hashie::Extensions::DeepFind)
     end
-
-    private
-
-    def serialize_params
-      return '' if params.empty?
-
-      "?" + params.map {|k, v| "#{k}=#{v}"}.join('&')
-    end
   end
 end

@@ -4,6 +4,14 @@ module InstaScraper
       @html ||= get_html
     end
 
+    protected
+
+    def serialize_params
+      return '' if params.empty?
+
+      "?" + params.map {|k, v| "#{k}=#{v}"}.join('&')
+    end
+
     private
 
     def get_html

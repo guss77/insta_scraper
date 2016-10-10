@@ -32,4 +32,10 @@ class InstaScraper::HTML::AccountTest < Minitest::Test
   def test_json_is_a_hashie_mash
     assert @account.data.is_a? Hashie::Mash
   end
+
+  def test_it_serializes_max_id_param
+    @account = InstaScraper::HTML::Account.new('barna.kovacs.codes', nil, max_id: '1329031062285749945_528817151')
+
+    assert @account.url == 'https://www.instagram.com/barna.kovacs.codes/?max_id=1329031062285749945_528817151'
+  end
 end
