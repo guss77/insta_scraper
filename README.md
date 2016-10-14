@@ -70,6 +70,17 @@ account_media.data #=> #<Hashie::Mash...
 account_media.data.fetch('items') #=> [...]
 ```
 
+* InstaScraper::JSON::MediaComment
+
+```ruby
+media_comment = InstaScraper::JSON::MediaComment.new('BLeceL9BZNT', 17843235427151917, 20)
+# shortcode, last_comment_id, per_page
+
+media_comment.data #=> #<Hashie::Mash...
+media_comment.data['comments']['nodes'] #=> [#<Hashie::Mash created_at=1476385792.0 id="17843206063151917" text="Now we can get the golden penis ship!"
+```
+
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
@@ -80,8 +91,10 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/preciz/insta_scraper.
 
+Ferenc Fekete
+Extended gem with comment crawler class.
+
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
