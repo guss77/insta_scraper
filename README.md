@@ -77,7 +77,7 @@ media_comment = InstaScraper::JSON::MediaComment.new('BLeceL9BZNT', 178432354271
 # shortcode, last_comment_id, per_page
 
 media_comment.data #=> #<Hashie::Mash...
-media_comment.data['comments']['nodes'] #=> [#<Hashie::Mash created_at=1476385792.0 id="17843206063151917" text="Now we can get the golden penis ship!"
+media_comment.data['comments']['nodes'] #=> [#<Hashie::Mash created_at=1476385792.0 id="17843206063151917" text="Now we can get the golden ship!"
 ```
 
 
