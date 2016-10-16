@@ -4,6 +4,13 @@ module InstaScraper
       @html ||= get_html
     end
 
+    def data
+      @data ||=
+        Hashie::Mash.new(::JSON.parse(shared_data))
+                    .extend(Hashie::Extensions::DeepFetch)
+                    .extend(Hashie::Extensions::DeepFind)
+    end
+
     protected
 
     def serialize_params

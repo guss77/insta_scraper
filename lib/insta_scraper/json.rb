@@ -4,6 +4,13 @@ module InstaScraper
       @raw_json ||= get_json
     end
 
+    def data
+      @data ||=
+        Hashie::Mash.new(::JSON.parse(raw_json))
+                    .extend(Hashie::Extensions::DeepFetch)
+                    .extend(Hashie::Extensions::DeepFind)
+    end
+
     protected
 
     def serialize_params

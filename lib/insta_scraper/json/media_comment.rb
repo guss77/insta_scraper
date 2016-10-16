@@ -13,12 +13,5 @@ module InstaScraper
     def url
       "https://www.instagram.com/query/?q=ig_shortcode(#{shortcode}){comments.before(#{last_comment_id},#{per_page}){count,nodes{id,created_at,text,user{id,profile_pic_url,username,follows{count},followed_by{count},biography,full_name,media{count},is_private,external_url,is_verified}},page_info}}"
     end
-
-    def data
-      @data ||=
-        Hashie::Mash.new(::JSON.parse(raw_json))
-                    .extend(Hashie::Extensions::DeepFetch)
-                    .extend(Hashie::Extensions::DeepFind)
-    end
   end
 end
