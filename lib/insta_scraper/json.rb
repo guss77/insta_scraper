@@ -1,7 +1,7 @@
 module InstaScraper
   class JSON
     def raw_json
-      @raw_json ||= get_json
+      @raw_json ||= response.body
     end
 
     def data
@@ -11,18 +11,18 @@ module InstaScraper
                     .extend(Hashie::Extensions::DeepFind)
     end
 
+    attr_writer :response
+
+    def response
+      @response ||= Faraday.get(url)
+    end
+
     protected
 
     def serialize_params
       return '' if params.empty?
 
       "?" + params.map {|k, v| "#{k}=#{v}"}.join('&')
-    end
-
-    private
-
-    def get_json
-      open(url).read
     end
   end
 end
