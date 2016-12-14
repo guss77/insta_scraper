@@ -70,7 +70,7 @@ account_media.data #=> #<Hashie::Mash...
 account_media.data.fetch('items') #=> [...]
 ```
 
-* InstaScraper::JSON::MediaComment
+* InstaScraper::JSON::MediaComment (deprecated, use MediaCommentStream)
 
 ```ruby
 media_comment = InstaScraper::JSON::MediaComment.new('BLeceL9BZNT', 17843235427151917, 20)
@@ -78,6 +78,16 @@ media_comment = InstaScraper::JSON::MediaComment.new('BLeceL9BZNT', 178432354271
 
 media_comment.data #=> #<Hashie::Mash...
 media_comment.data['comments']['nodes'] #=> [#<Hashie::Mash created_at=1476385792.0 id="17843206063151917" text="Now we can get the golden ship!"
+```
+
+* InstaScraper::JSON::MediaCommentStream
+
+```ruby
+media_comments = InstaScraper::JSON::MediaCommentStream.new('BLeceL9BZNT', options = {})
+# optional_hash = { last_comment_id: '17845167841178842', max_comments: 200, per_page: 20}
+
+media_comments.data #=> #<Hashie::Mash...
+media_comments.data['comments'] #=> [#<Hashie::Mash created_at=1476385792.0 id="17843206063151917" text="Now we can get the golden ship!"
 ```
 
 
