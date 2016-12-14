@@ -5,6 +5,7 @@ module InstaScraper
                 :per_page
 
     def initialize(shortcode, last_comment_id, per_page = 20)
+      warn 'Instagram changed things, this no longer works, use MediaCommentStream'
       @shortcode       = shortcode
       @last_comment_id = last_comment_id
       @per_page        = per_page
