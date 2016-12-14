@@ -1,6 +1,8 @@
 require 'insta_scraper/version'
 
 require 'open-uri'
+require 'faraday'
+require 'faraday-cookie_jar'
 require 'json'
 
 require 'hashie'
