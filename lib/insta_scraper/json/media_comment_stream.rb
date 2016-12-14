@@ -18,7 +18,15 @@ module InstaScraper
       @comments        = {}
     end
 
-    def data(current_last_comment_id = nil)
+    def data
+      Hashie::Mash.new({ comments: _data })
+                  .extend(Hashie::Extensions::DeepFetch)
+                  .extend(Hashie::Extensions::DeepFind)
+    end
+
+    private
+
+    def _data(current_last_comment_id = nil)
       current_last_comment_id ||= (last_comment_id || default_last_comment_id)
 
       response = connection.post do |req|
@@ -38,7 +46,7 @@ module InstaScraper
       @comments[current_last_comment_id] = current_comments
 
       if current_comments.any? && !reached_max_comments?
-        data(current_comments.first['id'])
+        _data(current_comments.first['id'])
       end
 
       all_comments
@@ -47,8 +55,6 @@ module InstaScraper
       @error = e
       all_comments
     end
-
-    private
 
     def all_comments
       comments.values.flatten
