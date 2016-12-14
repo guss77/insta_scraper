@@ -43,6 +43,7 @@ module InstaScraper
 
       all_comments
     rescue => e
+      warn e.inspect
       @error = e
       all_comments
     end
