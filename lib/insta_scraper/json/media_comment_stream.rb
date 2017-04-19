@@ -84,7 +84,7 @@ module InstaScraper
     def default_last_comment_id
       media = InstaScraper::JSON::Media.new(shortcode)
       media.response = connection_response
-      media.data['media']['comments']['nodes'].last['id']
+      media.data["graphql"]["shortcode_media"]["edge_media_to_comment"]["edges"].last["node"]["id"]
     end
   end
 
