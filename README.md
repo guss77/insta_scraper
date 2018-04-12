@@ -1,5 +1,7 @@
 # InstaScraper
 
+# NO LONGER MAINTAINED
+
 Scrapes Instagram
 
 ## Installation
