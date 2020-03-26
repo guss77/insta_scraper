@@ -1,24 +1,34 @@
 # InstaScraper
 
-# NO LONGER MAINTAINED
-
 Scrapes Instagram
+
+## Warning: not official and not maintained
+
+This repository is a fork of the original published ruby gem. The upstream repo - `benoitr/insta_scraper`, is also not the original
+gem publisher (the original gem's repository is no longer available), so I can't attest to how well this repo tracks with the
+published gem.
+
+I am not maintaining this repo except as minimally as needed to make my apps work, which up until now has mostly been about dealing
+better with Faraday. That being said, pull requests are welcome.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+This repo is *not* published in rubygems.org, and as such require installation from this Github repo.
+
+Bundle supports this natively by adding this line to your application's Gemfile:
 
 ```ruby
-gem 'insta_scraper'
+gem 'insta_scraper', require: 'insta_scraper', git: 'https://github.com/guss77/insta_scraper'
 ```
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
+If you do not use bundler, you will likely need to clone this repo and build it locally using:
 
-    $ gem install insta_scraper
+    $ gem build insta_scrapper.gemspec
+    $ gem install insta_scrapper*.gem
 
 ## Usage
 
